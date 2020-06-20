@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: order
+    profiles:
+      active: dev
+  mvc:
+    static-path-pattern: /**
+    view:
+      prefix: classpath:/static/ # 配置静态页面访问前缀
+  cloud:
+    nacos:
+      config:
+        server-addr: 127.0.0.1:8848
+      discovery:
+        server-addr: 127.0.0.1:8848
+logging:
+  config: classpath:logback-spring.xml
+  level:
+    root: INFO
+    org:
+      mybatis: INFO
+
